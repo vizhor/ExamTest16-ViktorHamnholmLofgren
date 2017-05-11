@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f55d2a26-6059-4234-a861-c73d243f7e01" activeEnvironment="Default" name="uklocation" soapui-version="5.3.0" abortOnError="false" runType="SEQUENTIAL" resourceRoot="" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b9f3687d-a751-484a-af8f-34c31febae33" wsaVersion="NONE" name="UKLocationSoap" type="wsdl" bindingName="{http://www.webserviceX.NET}UKLocationSoap" soapVersion="1_1" anonymous="optional" definition="http://webservicex.net/uklocation.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://webservicex.net/uklocation.asmx?WSDL"><con:part><con:url>http://webservicex.net/uklocation.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.webserviceX.NET" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.webserviceX.NET" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:documentation>Get UK Postcode,Town,County and Validate UK Address</wsdl:documentation>
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.webserviceX.NET">
+      <s:element name="GetUKLocationByCounty">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUKLocationByCountyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUKLocationByCountyResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUKLocationByTown">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUKLocationByTownResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUKLocationByTownResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUKLocationByPostCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetUKLocationByPostCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetUKLocationByPostCodeResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateUKAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Town" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="County" type="s:string"/>
+            <s:element minOccurs="0" maxOccurs="1" name="PostCode" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ValidateUKAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ValidateUKAddressResult" type="s:string"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string"/>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="GetUKLocationByCountySoapIn">
+    <wsdl:part name="parameters" element="tns:GetUKLocationByCounty"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByCountySoapOut">
+    <wsdl:part name="parameters" element="tns:GetUKLocationByCountyResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByTownSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUKLocationByTown"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByTownSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUKLocationByTownResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByPostCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetUKLocationByPostCode"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByPostCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetUKLocationByPostCodeResponse"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateUKAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:ValidateUKAddress"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateUKAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:ValidateUKAddressResponse"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByCountyHttpGetIn">
+    <wsdl:part name="County" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByCountyHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByTownHttpGetIn">
+    <wsdl:part name="Town" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByTownHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByPostCodeHttpGetIn">
+    <wsdl:part name="PostCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByPostCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateUKAddressHttpGetIn">
+    <wsdl:part name="Town" type="s:string"/>
+    <wsdl:part name="County" type="s:string"/>
+    <wsdl:part name="PostCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateUKAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByCountyHttpPostIn">
+    <wsdl:part name="County" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByCountyHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByTownHttpPostIn">
+    <wsdl:part name="Town" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByTownHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByPostCodeHttpPostIn">
+    <wsdl:part name="PostCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="GetUKLocationByPostCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateUKAddressHttpPostIn">
+    <wsdl:part name="Town" type="s:string"/>
+    <wsdl:part name="County" type="s:string"/>
+    <wsdl:part name="PostCode" type="s:string"/>
+  </wsdl:message>
+  <wsdl:message name="ValidateUKAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string"/>
+  </wsdl:message>
+  <wsdl:portType name="UKLocationSoap">
+    <wsdl:operation name="GetUKLocationByCounty">
+      <wsdl:documentation>Get UK town,Postcode and County by full /partial County</wsdl:documentation>
+      <wsdl:input message="tns:GetUKLocationByCountySoapIn"/>
+      <wsdl:output message="tns:GetUKLocationByCountySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByTown">
+      <wsdl:documentation>Get UK town,Postcode and County by full /partial Town</wsdl:documentation>
+      <wsdl:input message="tns:GetUKLocationByTownSoapIn"/>
+      <wsdl:output message="tns:GetUKLocationByTownSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByPostCode">
+      <wsdl:documentation>Get UK town,Postcode and County by Postcode(First Section of Post Code)</wsdl:documentation>
+      <wsdl:input message="tns:GetUKLocationByPostCodeSoapIn"/>
+      <wsdl:output message="tns:GetUKLocationByPostCodeSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUKAddress">
+      <wsdl:documentation>Validate UK address,Use First Section of Poscode for Postcode atribute</wsdl:documentation>
+      <wsdl:input message="tns:ValidateUKAddressSoapIn"/>
+      <wsdl:output message="tns:ValidateUKAddressSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UKLocationHttpGet">
+    <wsdl:operation name="GetUKLocationByCounty">
+      <wsdl:documentation>Get UK town,Postcode and County by full /partial County</wsdl:documentation>
+      <wsdl:input message="tns:GetUKLocationByCountyHttpGetIn"/>
+      <wsdl:output message="tns:GetUKLocationByCountyHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByTown">
+      <wsdl:documentation>Get UK town,Postcode and County by full /partial Town</wsdl:documentation>
+      <wsdl:input message="tns:GetUKLocationByTownHttpGetIn"/>
+      <wsdl:output message="tns:GetUKLocationByTownHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByPostCode">
+      <wsdl:documentation>Get UK town,Postcode and County by Postcode(First Section of Post Code)</wsdl:documentation>
+      <wsdl:input message="tns:GetUKLocationByPostCodeHttpGetIn"/>
+      <wsdl:output message="tns:GetUKLocationByPostCodeHttpGetOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUKAddress">
+      <wsdl:documentation>Validate UK address,Use First Section of Poscode for Postcode atribute</wsdl:documentation>
+      <wsdl:input message="tns:ValidateUKAddressHttpGetIn"/>
+      <wsdl:output message="tns:ValidateUKAddressHttpGetOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="UKLocationHttpPost">
+    <wsdl:operation name="GetUKLocationByCounty">
+      <wsdl:documentation>Get UK town,Postcode and County by full /partial County</wsdl:documentation>
+      <wsdl:input message="tns:GetUKLocationByCountyHttpPostIn"/>
+      <wsdl:output message="tns:GetUKLocationByCountyHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByTown">
+      <wsdl:documentation>Get UK town,Postcode and County by full /partial Town</wsdl:documentation>
+      <wsdl:input message="tns:GetUKLocationByTownHttpPostIn"/>
+      <wsdl:output message="tns:GetUKLocationByTownHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByPostCode">
+      <wsdl:documentation>Get UK town,Postcode and County by Postcode(First Section of Post Code)</wsdl:documentation>
+      <wsdl:input message="tns:GetUKLocationByPostCodeHttpPostIn"/>
+      <wsdl:output message="tns:GetUKLocationByPostCodeHttpPostOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUKAddress">
+      <wsdl:documentation>Validate UK address,Use First Section of Poscode for Postcode atribute</wsdl:documentation>
+      <wsdl:input message="tns:ValidateUKAddressHttpPostIn"/>
+      <wsdl:output message="tns:ValidateUKAddressHttpPostOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="UKLocationSoap" type="tns:UKLocationSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetUKLocationByCounty">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetUKLocationByCounty" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByTown">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetUKLocationByTown" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByPostCode">
+      <soap:operation soapAction="http://www.webserviceX.NET/GetUKLocationByPostCode" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUKAddress">
+      <soap:operation soapAction="http://www.webserviceX.NET/ValidateUKAddress" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UKLocationSoap12" type="tns:UKLocationSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetUKLocationByCounty">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetUKLocationByCounty" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByTown">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetUKLocationByTown" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByPostCode">
+      <soap12:operation soapAction="http://www.webserviceX.NET/GetUKLocationByPostCode" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUKAddress">
+      <soap12:operation soapAction="http://www.webserviceX.NET/ValidateUKAddress" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UKLocationHttpGet" type="tns:UKLocationHttpGet">
+    <http:binding verb="GET"/>
+    <wsdl:operation name="GetUKLocationByCounty">
+      <http:operation location="/GetUKLocationByCounty"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByTown">
+      <http:operation location="/GetUKLocationByTown"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByPostCode">
+      <http:operation location="/GetUKLocationByPostCode"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUKAddress">
+      <http:operation location="/ValidateUKAddress"/>
+      <wsdl:input>
+        <http:urlEncoded/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="UKLocationHttpPost" type="tns:UKLocationHttpPost">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="GetUKLocationByCounty">
+      <http:operation location="/GetUKLocationByCounty"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByTown">
+      <http:operation location="/GetUKLocationByTown"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUKLocationByPostCode">
+      <http:operation location="/GetUKLocationByPostCode"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ValidateUKAddress">
+      <http:operation location="/ValidateUKAddress"/>
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UKLocation">
+    <wsdl:documentation>Get UK Postcode,Town,County and Validate UK Address</wsdl:documentation>
+    <wsdl:port name="UKLocationSoap" binding="tns:UKLocationSoap">
+      <soap:address location="http://webservicex.net/uklocation.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="UKLocationSoap12" binding="tns:UKLocationSoap12">
+      <soap12:address location="http://webservicex.net/uklocation.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="UKLocationHttpGet" binding="tns:UKLocationHttpGet">
+      <http:address location="http://webservicex.net/uklocation.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="UKLocationHttpPost" binding="tns:UKLocationHttpPost">
+      <http:address location="http://webservicex.net/uklocation.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://webservicex.net/uklocation.asmx</con:endpoint></con:endpoints><con:operation id="7d732abe-2c2c-4ac0-b265-78090fb9991d" isOneWay="false" action="http://www.webserviceX.NET/GetUKLocationByCounty" name="GetUKLocationByCounty" bindingOperationName="GetUKLocationByCounty" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b33a0da0-0b3b-4a16-8a10-44e584a905f5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetUKLocationByCounty>\r
+         <!--Optional:-->\r
+         <web:County>?</web:County>\r
+      </web:GetUKLocationByCounty>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/GetUKLocationByCounty"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="46dc238f-a33b-4bad-881c-0a3aabe56702" isOneWay="false" action="http://www.webserviceX.NET/GetUKLocationByPostCode" name="GetUKLocationByPostCode" bindingOperationName="GetUKLocationByPostCode" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="37e1e7fa-1163-4e39-83eb-bb4926c8a339" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetUKLocationByPostCode>\r
+         <!--Optional:-->\r
+         <web:PostCode>?</web:PostCode>\r
+      </web:GetUKLocationByPostCode>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/GetUKLocationByPostCode"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="6f0b9ddd-8541-4c5c-9f72-541433da2097" isOneWay="false" action="http://www.webserviceX.NET/GetUKLocationByTown" name="GetUKLocationByTown" bindingOperationName="GetUKLocationByTown" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="6d84b01e-32bb-4dda-b3e3-23cf7831d9b5" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:GetUKLocationByTown>\r
+         <!--Optional:-->\r
+         <web:Town>?</web:Town>\r
+      </web:GetUKLocationByTown>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/GetUKLocationByTown"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="9a009646-b0fb-4575-909a-590ea6092fd7" isOneWay="false" action="http://www.webserviceX.NET/ValidateUKAddress" name="ValidateUKAddress" bindingOperationName="ValidateUKAddress" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c2a0c9a4-6a47-4734-b9ed-ce549878049f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <web:ValidateUKAddress>\r
+         <!--Optional:-->\r
+         <web:Town>?</web:Town>\r
+         <!--Optional:-->\r
+         <web:County>?</web:County>\r
+         <!--Optional:-->\r
+         <web:PostCode>?</web:PostCode>\r
+      </web:ValidateUKAddress>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.webserviceX.NET/ValidateUKAddress"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:testSuite id="d662a4e1-df0c-4083-8966-96031e73a84b" name="UKLocation-TestSuite"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="e319ada9-6a08-4ed8-b095-460217f0fe4f" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="UKLocation-TestCase" searchProperties="true"><con:settings/><con:testStep type="request" name="GetUKLocationByCounty" id="b37317eb-8228-4388-a514-ed1315e57ea2"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UKLocationSoap</con:interface><con:operation>GetUKLocationByCounty</con:operation><con:request name="GetUKLocationByCounty" id="1daf8139-365a-4e71-924e-95c5ef7f88c6"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetUKLocationByCounty>
+         <!--Optional:-->
+         <web:County>oxford</web:County>
+      </web:GetUKLocationByCounty>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="5e387115-5e0d-4b2b-81b9-cdd09829288f"/><con:assertion type="Valid HTTP Status Codes" id="fc681a97-6211-46af-9982-fe138fe4cad2" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="dc1b89af-3f8d-45ff-81e9-d328dac3bcfe" name="Contains"><con:configuration><token>Oxfordshire</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="properties" name="PostCode" id="af00022e-f946-40c6-9e04-bfc84edc039d"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>postCode</con:name><con:value>OX15</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="request" name="GetUKLocationByPostCode" id="2d689722-688a-47ed-9869-fc3d35f83603"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UKLocationSoap</con:interface><con:operation>GetUKLocationByPostCode</con:operation><con:request name="GetUKLocationByPostCode" id="07b6a27d-107b-4848-96c3-62584768e9e4"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetUKLocationByPostCode>
+         <!--Optional:-->
+         <web:PostCode>${PostCode#postCode}</web:PostCode>
+      </web:GetUKLocationByPostCode>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="e3554adc-a058-4773-86f9-e5a0dfb94303"/><con:assertion type="Simple Contains" id="a94aebb0-1b28-4d45-aeb6-c340f6e0a798" name="Contains"><con:configuration><token>OX15</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="f7e5b1ab-70c2-493a-be88-92b2d052558a" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="GetUKLocationByTown_ProjectLevel" id="173ba5c5-1d24-461d-b24e-86b1c8e259f9"><con:settings/><con:config><script>import groovy.util.XmlSlurper
+
+def responseContent = testRunner.testCase.getTestStepByName("GetUKLocationByPostCode").getPropertyValue("response")
+def xmlResponse = new XmlSlurper().parseText(responseContent)
+def slurperResponse=new XmlSlurper().parseText(xmlResponse.Body.GetUKLocationByPostCodeResponse.GetUKLocationByPostCodeResult.toString())
+
+def UKTown = slurperResponse.Table.Town[0]
+log.info(UKTown)
+
+testRunner.testCase.testSuite.project.setPropertyValue("UKTown", UKTown.toString())
+log.info(UKTown)
+
+</script></con:config></con:testStep><con:testStep type="request" name="GetUKLocationByTown" id="69b1e84c-7fae-4574-a804-f49a0f8d32b4"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UKLocationSoap</con:interface><con:operation>GetUKLocationByTown</con:operation><con:request name="GetUKLocationByTown" id="57e2c870-579c-48e2-b46c-d9161ead1e7b"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:GetUKLocationByTown>
+         <!--Optional:-->
+         <web:Town>${#Project#UKTown}</web:Town>
+      </web:GetUKLocationByTown>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="3035d82d-8268-4114-bf95-e8eeef9b7a22"/><con:assertion type="Simple Contains" id="770fab6e-c77e-409d-957a-234dd5d95f56" name="Contains"><con:configuration><token>Clifton</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="feae82bc-f0f5-4bdd-bf3f-25a8074d05bc" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="groovy" name="ValidateUKAddress_GlobalLevel" id="90e35fa7-3efb-437b-bfbe-7d3f32b6e946"><con:settings/><con:config><script>import groovy.util.XmlSlurper
+
+def responseContent = testRunner.testCase.getTestStepByName("GetUKLocationByTown").getPropertyValue("response")
+def xmlResponse = new XmlSlurper().parseText(responseContent)
+def slurperResponse=new XmlSlurper().parseText(xmlResponse.Body.GetUKLocationByTownResponse.GetUKLocationByTownResult.toString())
+
+def UKTown = slurperResponse.Table.Town[0]
+def UKCounty = slurperResponse.Table.County[0]
+def UKPostCode = slurperResponse.Table.PostCode[0]
+
+com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("UKTown", UKTown.toString())
+com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("UKCounty", UKCounty.toString())
+com.eviware.soapui.SoapUI.globalProperties.setPropertyValue("UKPostCode", UKPostCode.toString())
+log.info(UKTown)
+log.info(UKCounty)
+log.info(UKPostCode)</script></con:config></con:testStep><con:testStep type="request" name="ValidateUKAddress" id="5a895be2-9f23-430a-bd87-456cc7c3bc23"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>UKLocationSoap</con:interface><con:operation>ValidateUKAddress</con:operation><con:request name="ValidateUKAddress" id="65b28713-5bff-42c4-b16f-7f34a214a1a9"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://webservicex.net/uklocation.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:web="http://www.webserviceX.NET">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <web:ValidateUKAddress>
+         <!--Optional:-->
+         <web:Town>${UKTown}</web:Town>
+         <!--Optional:-->
+         <web:County>${UKCounty}</web:County>
+         <!--Optional:-->
+         <web:PostCode>${UKPostCode}</web:PostCode>
+      </web:ValidateUKAddress>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="2ef32594-6cbb-42a4-834d-2231b72017d9"/><con:assertion type="Simple Contains" id="f595d965-0c0a-45f3-9181-72245b272304" name="Contains Clifton"><con:configuration><token>Clifton</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Valid HTTP Status Codes" id="b3b89512-5282-472d-a2ab-2db434de56d3" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="88f009b0-5c3e-4787-8789-c12e196d8b1d"><con:configuration/></con:assertion><con:assertion type="Simple Contains" id="6c619b73-aae1-41ca-9f94-827adc4252c3" name="Contains Bedfordshire"><con:configuration><token/><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:assertion type="Simple Contains" id="ba3f03dc-e523-47f7-acfa-1ca52effe0f0" name="Contains SG17"><con:configuration><token>SG17</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties><con:property><con:name>TownName</con:name><con:value>Clifton</con:value></con:property><con:property><con:name>UKTown</con:name><con:value>Clifton</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
